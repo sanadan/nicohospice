@@ -1,0 +1,5 @@
+#!/bin/sh
+
+sudo ln -s /var/www/nicohospice/nicohospice.conf /etc/apache2/conf-enabled
+sudo service apache2 restart
+

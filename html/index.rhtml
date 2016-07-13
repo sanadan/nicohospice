@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<title>nicohospice</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="shortcut.js" type="text/javascript"></script>
+<script type="text/javascript">
+<!--
+function init()
+{
+  shortcut.add( "n", function() {
+    window.open( "<%= next_uri %>", "_self" ) ;
+  } ) ;
+  shortcut.add( "p", function() {
+    window.open( "<%= prev_uri %>", "_self" ) ;
+  } ) ;
+}
+window.onload=init;
+// -->
+</script>
+<style type="text/css">
+<!--
+iframe.nicovideo
+{
+	width: 300px;
+	height: 200px;
+	border: solid 1px #CCC;
+	margin: 0px;
+	padding: 0px;
+}
+-->
+</style>
+</head>
+<body>
+<p>
+<% if num >= ITEMS %>
+	<a href="<%= prev_uri %>">前</a> 
+<% else %>
+	前 
+<% end %>
+	<a href="<%= next_uri %>">次</a>
+</p>
+<p>
+<% i = 0 %>
+<% while i < ITEMS %>
+	<iframe class="nicovideo" src="http://www.nicovideo.jp/thumb/<%= head + ( num + i ).to_s %>" scrolling="no">
+	</iframe>
+	<% i += 1 %>
+<% end %>
+</p>
+<p>
+<% if num >= ITEMS %>
+	<a href="<%= prev_uri %>">前</a> 
+<% else %>
+	前 
+<% end %>
+	<a href="<%= next_uri %>">次</a>
+</p>
+</body>
+</html>
