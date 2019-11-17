@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 #	ニコニコ動画巡礼教会
-#	Ver. 1.0
+#	Ver. 1.0.1
 #	by sanadan
 
 require 'cgi'
